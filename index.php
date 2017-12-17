@@ -42,8 +42,10 @@ for ($i = 0; $i < $size; $i++) {
     }
 }
 var_dump($out);
+$sum = 0;
 // print the result
 foreach ($dir AS $d) {
-    echo str_repeat($d . ',', $out[$d]);
+    $sum += $out[$d];
+//    echo str_repeat($d . ',', $out[$d]);
 }
-
+echo $sum;
