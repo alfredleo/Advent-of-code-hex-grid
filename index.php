@@ -29,9 +29,9 @@ $size = count($dir);
 // combine n+se to ne, nw+ne to n and so on...
 for ($i = 0; $i < $size; $i++) {
     $less = &$out[$dir[($size - 1 + $i) % $size]];
-    $mid = &$out[$dir[$i%$size]];
+    $mid = &$out[$dir[$i % $size]];
     $more = &$out[$dir[($i + 1) % $size]];
-    if($less > $more){
+    if ($less > $more) {
         $mid = $mid + $more;
         $less = $less - $more;
         $more = 0;
@@ -43,7 +43,7 @@ for ($i = 0; $i < $size; $i++) {
 }
 var_dump($out);
 // print the result
-foreach ($dir AS $d){
+foreach ($dir AS $d) {
     echo str_repeat($d . ',', $out[$d]);
 }
 
