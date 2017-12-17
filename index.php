@@ -26,6 +26,7 @@ function compare($a, $b, &$out)
 
 $dir = ['n', 'ne', 'se', 's', 'sw', 'nw'];
 $size = count($dir);
+// combine n+se to ne, nw+ne to n and so on...
 for ($i = 0; $i < $size; $i++) {
     $less = &$out[$dir[($size - 1 + $i) % $size]];
     $mid = &$out[$dir[$i%$size]];
